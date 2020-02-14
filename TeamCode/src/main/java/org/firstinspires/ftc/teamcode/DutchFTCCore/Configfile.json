@@ -1,0 +1,25 @@
+{
+  "MotorBackLeft" : "MotorBackLeft",
+  "MotorFrontLeft" : "MotorFrontLeft",
+  "MotorBackRight" : "MotorBackRight",
+  "MotorFrontRight" : "MotorFrontRight",
+
+  "Servo0" : "Servo0",
+  "Servo1" : "Servo1",
+  "Servo2" : "Servo2",
+  "Servo3" : "Servo3",
+  "Servo4" : "Servo4",
+  "Servo5" : "Servo5",
+
+  "Tankdrive" : false,
+
+  "teamName" : "FTCunits",
+  "isLoggingUsed" : false;
+
+  "posControl" : false,
+  "angleControl" : true,
+  "angleKp" : 0.05,
+  "angleKi" : 0.01,
+  "angleKd" : 0.04
+
+}

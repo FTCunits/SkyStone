@@ -8,9 +8,6 @@ public class Robotconfig {
     public static String MotorFrontRight = "MotorFrontRight";
     public static String MotorBackRight = "MotorBackRight";
 
-    //TeleOp variables;
-    public static double ShortCutSpeed = 0.3;
-
     //servo ports
     public static String Servo0 = "Servo0";
     public static String Servo1 = "Servo1";
@@ -31,7 +28,7 @@ public class Robotconfig {
     public static boolean isLoggingUsed;
 
     //guidance subsystem
-    public static boolean posControl;
+    public static boolean posControl = false;
     public static boolean angleControl = true;
     public static double angleKp = 1/20;
     public static double angleKi = 1/100;
