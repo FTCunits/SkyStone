@@ -1,5 +1,10 @@
 package org.firstinspires.ftc.teamcode.DutchFTCCore.SubSystems;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import org.firstinspires.ftc.teamcode.DutchFTCCore.Drivetraintypes;
 import org.firstinspires.ftc.teamcode.DutchFTCCore.Robot;
 import org.firstinspires.ftc.teamcode.DutchFTCCore.Robotconfig;
@@ -8,6 +13,9 @@ public class MovementSubSystem extends SubSystem {
     public static MovementSubSystem instance;
     Robot bot;
     Drivetraintypes traintypes;
+
+    JSONParser parser = new JSONParser();
+
     /**
      * Movement of the robot on the x axis in a value between -1 and 1;
      */

@@ -3,6 +3,7 @@
   "MotorFrontLeft" : "MotorFrontLeft",
   "MotorBackRight" : "MotorBackRight",
   "MotorFrontRight" : "MotorFrontRight",
+  "MotorMiddle" : "MotorMiddle",
 
   "Servo0" : "Servo0",
   "Servo1" : "Servo1",
@@ -11,10 +12,10 @@
   "Servo4" : "Servo4",
   "Servo5" : "Servo5",
 
-  "Tankdrive" : false,
+  "Drivetrain" : "TANKDRIVE",
 
   "teamName" : "FTCunits",
-  "isLoggingUsed" : false;
+  "isLoggingUsed" : false,
 
   "posControl" : false,
   "angleControl" : true,
