@@ -116,7 +116,7 @@ public class MovementSubSystem extends SubSystem {
         speed = (Math.hypot(xMov, yMov));
 
         //inverse tangent calculate angle of stick
-        stickangle = Math.atan2(xMov, yMov);
+        stickangle = Math.atan2(yMov, xMov);
 
         //twisting the circle of units 45 degrees
         stickangle -= Math.PI / 4;
