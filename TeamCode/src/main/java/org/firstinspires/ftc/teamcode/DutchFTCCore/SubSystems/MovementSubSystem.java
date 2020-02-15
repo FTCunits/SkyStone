@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.DutchFTCCore.SubSystems;
 
+import org.firstinspires.ftc.teamcode.DutchFTCCore.Drivetraintypes;
 import org.firstinspires.ftc.teamcode.DutchFTCCore.Robot;
 import org.firstinspires.ftc.teamcode.DutchFTCCore.Robotconfig;
 
 public class MovementSubSystem extends SubSystem {
     public static MovementSubSystem instance;
     Robot bot;
+    Drivetraintypes traintypes;
     /**
      * Movement of the robot on the x axis in a value between -1 and 1;
      */
@@ -24,15 +26,27 @@ public class MovementSubSystem extends SubSystem {
         super.Start();
         bot = Robot.instance;
         instance = this;
+        traintypes = bot.drivetrains;
     }
 
     @Override
     public void Update() {
         super.Update();
+        traintypes.DriveChecks();
     }
 
     public void DriveChecksKiwiDrive(){
+        //the variables for the motor speeds
+        double right = -yMov + rotation;
+        double left = yMov + rotation;
+        double front = xMov + rotation;
+        double back = -xMov + rotation;
 
+        //setting the motor speeds
+        bot.MotorBackLeft.setPower(left);
+        bot.MotorFrontLeft.setPower(back);
+        bot.MotorBackRight.setPower(front);
+        bot.MotorFrontRight.setPower(right);
     }
 
     public void DriveChecks4WheelTankDrive(){
@@ -60,9 +74,18 @@ public class MovementSubSystem extends SubSystem {
     }
 
     public void DriveChecksHDrive5Motors(){
-        double left;
-        double right;
-        double middle;
+
+        //the variables for the motor speeds
+        double right = -yMov + rotation;
+        double left = yMov + rotation;
+        double middle = xMov;
+
+        //setting the motor speeds
+        bot.MotorBackLeft.setPower(left);
+        bot.MotorBackRight.setPower(right);
+        bot.MotorFrontLeft.setPower(left);
+        bot.MotorFrontRight.setPower(right);
+        bot.MotorMiddle.setPower(middle);
 
     }
 
@@ -76,6 +99,7 @@ public class MovementSubSystem extends SubSystem {
         //setting the motor speeds
         bot.MotorBackLeft.setPower(left);
         bot.MotorBackRight.setPower(right);
+        bot.MotorMiddle.setPower(middle);
 
     }
 
@@ -92,7 +116,7 @@ public class MovementSubSystem extends SubSystem {
         speed = (Math.hypot(xMov, yMov));
 
         //inverse tangent calculate angle of stick
-        stickangle = Math.atan2(xMov, yMov);
+        stickangle = Math.atan2(yMov, xMov);
 
         //twisting the circle of units 45 degrees
         stickangle -= Math.PI / 4;

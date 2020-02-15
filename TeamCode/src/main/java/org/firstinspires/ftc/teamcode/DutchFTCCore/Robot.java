@@ -24,7 +24,10 @@ public class Robot {
     public DcMotor MotorFrontLeft;
     public DcMotor MotorFrontRight;
     public DcMotor MotorBackRight;
+    public DcMotor MotorMiddle;
     public BNO055IMU imu;
+
+    public Drivetraintypes drivetrains;
 
     //list of subsystems
     public List<SubSystem> subSystems;
@@ -33,10 +36,8 @@ public class Robot {
     public Robot (OpMode _opmode) {
         instance = this;
         opMode = _opmode;
-        MotorBackLeft = opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackLeft);
-        MotorFrontLeft = opMode.hardwareMap.dcMotor.get(Robotconfig.MotorFrontLeft);
-        MotorFrontRight = opMode.hardwareMap.dcMotor.get(Robotconfig.MotorFrontRight);
-        MotorBackRight = opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackRight);
+        drivetrains = new Drivetraintypes();
+        drivetrains.initDrivetrain(this);
         imu = opMode.hardwareMap.get(BNO055IMU.class,"imu");
         subSystems = new ArrayList<>();
     }
