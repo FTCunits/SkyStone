@@ -34,11 +34,11 @@ public class GuidanceSubSystem extends SubSystem {
         }
     }
 
-    void angleControlPID () {
+    public void angleControlPID () {
         double currAngleTime = System.currentTimeMillis();
         double error = targetAngle - IMUSubSystem.currHeading;
         double dt = currAngleTime - lastAngleTime;
-        angleIntegral = angleIntegral + error*dt;
+        angleIntegral += error*dt;
         double angleDeriv = (error-angleErrorPrev)/dt;
         angleMovement = Robotconfig.angleKp*error + Robotconfig.angleKi*angleIntegral + Robotconfig.angleKd*angleDeriv;
         angleErrorPrev = error;
@@ -46,6 +46,6 @@ public class GuidanceSubSystem extends SubSystem {
 
     }
 
-    //TODO: Add position controlq
+    //TODO: Add position control
 
 }

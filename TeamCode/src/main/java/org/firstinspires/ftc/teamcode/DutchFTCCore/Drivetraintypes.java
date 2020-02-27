@@ -23,6 +23,8 @@ public class Drivetraintypes {
 
 
         switch (Train){
+            case KIWIDRIVE:
+            case FOURWHEELTANKDRIVE:
             case MECHANUMDRIVE:
                 bot.MotorBackLeft = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackLeft);
                 bot.MotorFrontLeft = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorFrontLeft);
@@ -32,20 +34,6 @@ public class Drivetraintypes {
 
             case TANKDRIVE:
                 bot.MotorBackLeft = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackLeft);
-                bot.MotorBackRight = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackRight);
-                break;
-
-            case FOURWHEELTANKDRIVE:
-                bot.MotorBackLeft = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackLeft);
-                bot.MotorFrontLeft = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorFrontLeft);
-                bot.MotorFrontRight = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorFrontRight);
-                bot.MotorBackRight = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackRight);
-                break;
-
-            case KIWIDRIVE:
-                bot.MotorBackLeft = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackLeft);
-                bot.MotorFrontLeft = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorFrontLeft);
-                bot.MotorFrontRight = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorFrontRight);
                 bot.MotorBackRight = bot.opMode.hardwareMap.dcMotor.get(Robotconfig.MotorBackRight);
                 break;
 

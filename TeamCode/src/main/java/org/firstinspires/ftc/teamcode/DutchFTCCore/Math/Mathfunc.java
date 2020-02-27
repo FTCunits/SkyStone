@@ -8,7 +8,6 @@ public class Mathfunc {
         } else if (var > max) {
             var = max;
         }
-
         return var;
     }
 

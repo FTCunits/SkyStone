@@ -9,9 +9,6 @@ public class Robotconfig {
     public static String MotorBackRight = "MotorBackRight";
     public static String MotorMiddle = "MotorMiddle";
 
-    //TeleOp variables;
-    public static double ShortCutSpeed = 0.3;
-
     //servo ports
     public static String Servo0 = "Servo0";
     public static String Servo1 = "Servo1";
