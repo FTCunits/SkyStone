@@ -101,7 +101,7 @@ public class Drivetraintypes {
                 break;
 
             default:
-                //System.out.println("PLEASE SELECT A DRIVETRAIN");
+                System.out.println("PLEASE SELECT A DRIVETRAIN");
                 break;
         }
     }
